@@ -16,13 +16,6 @@
   
   
   {
-    "title": "About this website",
-    "excerpt": "\n",
-    "content": "I’m not sure yet what this website is about, but I’m sure I’ll work it out soon.\n",
-    "url": "/about/"
-  },
-  
-  {
     "title": "Categories",
     "excerpt": "Category index\n",
     "content": "\n",
@@ -37,10 +30,31 @@
   },
   
   {
-    "title": "Welcome to my website",
+    "title": "Methodology",
     "excerpt": "\n",
-    "content": "There isn’t much going on here yet, but watch this space\n",
-    "url": "/"
+    "content": "\n\nInput Pre-processing\n\n  Tick data of USDCAD, USDJPY, EURUSD, AUDUSD\n  Data Period: 01-Jan-2005 to 18-May-2019\n  Ticks are resampled per 1000-BidVolume, and Bid prices are used to construct the OHLC bar in each timestep\n\n\n\n\n\n\nFeatures Generation\nMomentum and pattern indicators are generated using TALib, a popular library for technical analysis.\n\nFor each momentum indicator, the following resolutions are generated: [1min, 5min, 15min, 30min, 1H, 3H, 6H, D]\n\n  Total Number of Pattern Detectors Available = 61\n  Total Number of time-resampled OHLC ([1min, 5min, 15min, 30min, 1H, 3H, 6H, D]) = 8\n  Therefore, the total number of patterns features generated = 61 x 8 = 488\n\n\n\n\n\n\n\nFeatures Selection\n\n  Each timestep has 503 features which is impractical due to machine resource restriction.\n  Random forest algorithm is applied to filter unimportant features to reduce the input dimension (number of features)\n  The main idea of random forest is to construct a multitude of decision trees at training time. The more times a feature is being referenced in the decision trees, the more important the feature is\n\n\n\n",
+    "url": "/methodology/"
+  },
+  
+  {
+    "title": "Neural Network Model",
+    "excerpt": "\n",
+    "content": "We make use of two layers of bidirectional LSTM as the input sequence encoder, and pass the encoded result to the \nself-attention layer extracted from BERT. Finally, the output from attention layer would be condensed into our prediction target, i.e. log return of the next timestep.\n\nBi-LSTM is an enhancement to the LSTM model which is a commonly used machine learning model for time series prediction.\nThe series of data is encoded from Left-to-Right and also Right-to-Left in order to preserve more sequential relationships.\n\n\nBidirectional Encoder Representations from Transformers (BERT), published by google in Oct, 2018, is a model designed to pre-train deep bidirectional representations from unlabelled text by jointly conditioning on both left and right context in all layers. BERT makes use of self-attention which has been adopted successfully in a variety of tasks such as reading comprehension, abstractive summarization, textual entailment and learning task-independent sentence representations. Self-attention is an intra-attention mechanism for relating different positions of a single sequence in order to compute a representation of the sequence.\n\n",
+    "url": "/model/"
+  },
+  
+  {
+    "title": "Results",
+    "excerpt": "\n",
+    "content": "\n\nterative Training: the test set is predicted and trained sequentially and \niteratively for each epoch. the objective is to let the model train on the \nrecent samples in the past, such that the model could adapt to the changes \nin market environment.\n\nNon-Iterative Backtest Results\n\n\n\n\n\nIterative Backtest Results\n\n\n\n\n",
+    "url": "/results/"
+  },
+  
+  {
+    "title": "Training",
+    "excerpt": "\n",
+    "content": "\n  The samples of training set is first shuffled in random order, \n and then split into batches per 128 samples\n  Batch size refers to the number of training examples utilized \n  in one iteration. Essentially, the gradient and the neural \n  network parameters are updated after each batch.\n  Batches are then feed into the model in random order to \n  avoid bias towards batches with larger index\n\n\n\n",
+    "url": "/training/"
   }
   
 ]

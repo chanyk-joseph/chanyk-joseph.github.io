@@ -1,8 +1,8 @@
-const version = '20190705174543';
+const version = '20190706160058';
 const cacheName = `static::${version}`;
 
 const buildContentBlob = () => {
-  return ["/general/2018/08/22/hello-world/","/about/","/categories/","/blog/","/","/manifest.json","/assets/search.json","/assets/styles.css","/redirects.json","/feed.xml","/sitemap.xml","/robots.txt","https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c?s=52", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
+  return ["/general/2018/08/22/hello-world/","/categories/","/blog/","/","/methodology/","/model/","/results/","/training/","/manifest.json","/assets/search.json","/assets/styles.css","/redirects.json","/feed.xml","/sitemap.xml","/robots.txt","https://www.hku.hk/f/page/7561/150p169/1d@750.jpg", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
   ]
 }
 

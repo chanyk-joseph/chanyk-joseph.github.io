@@ -4,6 +4,9 @@ feature_image: "https://picsum.photos/1300/400?image=989"
 feature_text: |
   ## COMP7704 Computing Projects in Algo Finance
   ## (Trading Strategy of Strategies)
+  ## 
+  ## CHAN Yiu Keung (2011565354)
+  ## Supervisor: Dr. Hilton K.H. Chan
 ---
 
 
